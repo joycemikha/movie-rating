@@ -1,0 +1,18 @@
+<div class="bg-dark bg-opacity-75">
+<p class="fw-bolder fs-2 py-3 px-5 text-bg-warning"> <i class="fa-solid fa-film"></i> Top movies on this week :</p>
+<div class="container d-flex " >
+      <div class="row">
+          @for( m of homeMovies ; track $index){
+            <div class="card card-movie bg-dark text-white">
+                <img [src]="imgPath+m.poster_path" class="w-100 pt-3 card-img-top" alt="Movie Poster">
+                <div class="card-body">
+                  <h5 class="card-title">{{ m.title || m.name }}</h5>
+                  <p class="card-text">{{m.overview}}</p>
+                  <p class="card-text"><strong>Release Date:  </strong>{{ m.release_date || m.first_air_date }}</p>
+                  <p class="card-text"><strong>Rating:</strong> {{m.vote_average}}/10  <i class="fa-solid fa-star" style="color: #FFD43B;"></i></p>
+                </div>
+              </div>
+          }
+      </div>
+  </div>    
+</div>
